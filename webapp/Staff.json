@@ -1,0 +1,85 @@
+{
+    "Staff": [
+      {
+        "LastName": "Журавлева",
+        "FirstName": "Полина",
+        "MiddleName": "Дмитриевна",
+        "Address": "ул. Витебская д. 9",
+        "Vacation": "Работает",
+        "VacationEndDate": "-"
+      },
+      {
+        "LastName": "Козлов",
+        "FirstName": "Евгений",
+        "MiddleName": "Матвеевич",
+        "Address": "ул. Комсомольская д. 368",
+        "Vacation": "Работает",
+        "VacationEndDate": "-"
+      },
+      {
+        "LastName": "Черных",
+        "FirstName": "Дарина",
+        "MiddleName": "Гордеевна",
+        "Address": "ул. Литовская д. 64",
+        "Vacation": "Работает",
+        "VacationEndDate": "-"
+      },
+      {
+        "LastName": "Голубев",
+        "FirstName": "Даниил",
+        "MiddleName": "Максимович",
+        "Address": "ул. Суворова д. 93",
+        "Vacation": "В отпуске",
+        "VacationEndDate": "25.07.2021"
+      },
+      {
+        "LastName": "Прокофьев",
+        "FirstName": "Егор",
+        "MiddleName": "Семёнович",
+        "Address": "ул. Красных Партизан д. 105",
+        "Vacation": "Работает",
+        "VacationEndDate": "-"
+      },
+      {
+        "LastName": "Андреев",
+        "FirstName": "Максим",
+        "MiddleName": "Львович",
+        "Address": "ул. Уральская д. 172",
+        "Vacation": "В отпуске",
+        "VacationEndDate": "11.09.2021"
+      },
+      {
+        "LastName": "Григорьев",
+        "FirstName": "Иван",
+        "MiddleName": "Алексеевич",
+        "Address": "ул. Кузьмина д. 14",
+        "Vacation": "Работает",
+        "VacationEndDate": "-"
+      },
+      {
+        "LastName": "Петровская",
+        "FirstName": "Василиса",
+        "MiddleName": "Макаровна",
+        "Address": "ул. Дзержинского д.14Б",
+        "Vacation": "Работает",
+        "VacationEndDate": "-"
+      },
+      {
+        "LastName": "Воробьева",
+        "FirstName": "Ульяна",
+        "MiddleName": "Романовна",
+        "Address": "ул. Космонавтов д. 62/1",
+        "Vacation": "Работает",
+        "VacationEndDate": "-"
+      },
+      {
+        "LastName": "Федоров",
+        "FirstName": "Лев",
+        "MiddleName": "Александрович",
+        "Address": "ул. Ясная д. 34/1",
+        "Vacation": "Работает",
+        "VacationEndDate": "-"
+      }
+    ]
+  }
+  

@@ -1,0 +1,19 @@
+<mvc:View
+   controllerName="sap.ui.demo.walkthrough.controller.StaffList"
+   xmlns="sap.m"
+   xmlns:mvc="sap.ui.core.mvc">
+   <List
+      headerText="{i18n>staffListTitle}"
+      class="sapUiResponsiveMargin"
+      width="auto"
+      items="{staff>/Staff}" >
+      <items>
+         <ObjectListItem
+            title="{staff>LastName} {staff>FirstName} {staff>MiddleName}"
+            number="{
+			    parts: [{path: 'staff>Vacation'}],
+			    type: 'sap.ui.model.type.String'
+		    }"/>
+      </items>
+   </List>
+</mvc:View>
