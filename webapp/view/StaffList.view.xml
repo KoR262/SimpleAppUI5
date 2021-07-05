@@ -1,19 +1,37 @@
 <mvc:View
    controllerName="sap.ui.demo.walkthrough.controller.StaffList"
    xmlns="sap.m"
+   xmlns:core="sap.ui.core"
    xmlns:mvc="sap.ui.core.mvc">
    <List
+      id="staffList"
       headerText="{i18n>staffListTitle}"
       class="sapUiResponsiveMargin"
       width="auto"
       items="{staff>/Staff}" >
+      <headerToolbar>
+         <Toolbar>
+            <Title text="{i18n>staffListTitle}"/>
+            <ToolbarSpacer/>
+            <MultiComboBox
+                width="50%"
+                selectionFinish=".onSelectionFinish"
+                items="{
+				      path: 'staff>/Filter'
+			      }">
+			      <core:Item key="{staff>key}" text="{staff>value}"/>
+            </MultiComboBox>
+         </Toolbar>
+      </headerToolbar>
       <items>
          <ObjectListItem
             title="{staff>LastName} {staff>FirstName} {staff>MiddleName}"
             number="{
 			    parts: [{path: 'staff>Vacation'}],
 			    type: 'sap.ui.model.type.String'
-		    }"/>
+		      }"
+            numberUnit="до {staff>VacationEndDate}"
+            numberState="{= ${staff>Vacation} === 'Работает' ? 'Success' : 'Error' }"/>
       </items>
    </List>
 </mvc:View>
