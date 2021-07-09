@@ -3,7 +3,7 @@
    xmlns="sap.m"
    xmlns:core="sap.ui.core"
    xmlns:mvc="sap.ui.core.mvc">
-   <List
+   <Table
       id="staffList"
       headerText="{i18n>staffListTitle}"
       class="sapUiResponsiveMargin"
@@ -23,15 +23,36 @@
             </MultiComboBox>
          </Toolbar>
       </headerToolbar>
+      <columns>
+         <Column>
+            <Text text="{i18n>columnLastName}"/>
+         </Column>
+         <Column>
+            <Text text="{i18n>columnFirstName}"/>
+         </Column>
+         <Column>
+            <Text text="{i18n>columnMiddleName}"/>
+         </Column>
+         <Column
+            hAlign="End">
+            <Text text="{i18n>columnStatus}"/>
+         </Column>
+		</columns>
       <items>
-         <ObjectListItem
-            title="{staff>LastName} {staff>FirstName} {staff>MiddleName}"
-            number="{
-			    parts: [{path: 'staff>Vacation'}],
-			    type: 'sap.ui.model.type.String'
-		      }"
-            numberUnit="до {staff>VacationEndDate}"
-            numberState="{= ${staff>Vacation} === 'Работает' ? 'Success' : 'Error' }"/>
+         <ColumnListItem type="Navigation">
+             <cells>
+                 <ObjectNumber number="{staff>LastName}"/>
+                 <ObjectNumber number="{staff>FirstName}" emphasized="false"/>
+                 <ObjectNumber number="{staff>MiddleName}" emphasized="false"/>
+                 <ObjectNumber 
+                     number="{
+			                parts: [{path: 'staff>Vacation'}],
+			                type: 'sap.ui.model.type.String'
+		                }"
+                      unit=" до {staff>VacationEndDate}"
+                      state="{= ${staff>Vacation} === 'Работает' ? 'Success' : 'Error' }"/>
+             </cells>
+         </ColumnListItem>
       </items>
-   </List>
+   </Table>
 </mvc:View>
