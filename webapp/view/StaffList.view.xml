@@ -39,7 +39,7 @@
          </Column>
 		</columns>
       <items>
-         <ColumnListItem type="Navigation">
+         <ColumnListItem type="Navigation" press=".onPress">
              <cells>
                  <ObjectNumber number="{staff>LastName}"/>
                  <ObjectNumber number="{staff>FirstName}" emphasized="false"/>

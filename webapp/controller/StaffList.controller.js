@@ -28,6 +28,14 @@ sap.ui.define([
 			var oList = this.byId("staffList");
 			var oBinding = oList.getBinding("items");
 			oBinding.filter(aFilter);
+		},
+
+		onPress: function (oEvent) {
+			var oItem = oEvent.getSource();
+			var oRouter = this.getOwnerComponent().getRouter();
+			oRouter.navTo("detail", {
+				staffPath: window.encodeURIComponent(oItem.getBindingContext("staff").getPath().substr(1))
+			});
 		}
 
 	});
