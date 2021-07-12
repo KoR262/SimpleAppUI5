@@ -1,19 +1,58 @@
 <mvc:View
    controllerName="sap.ui.demo.walkthrough.controller.StaffList"
    xmlns="sap.m"
+   xmlns:core="sap.ui.core"
    xmlns:mvc="sap.ui.core.mvc">
-   <List
+   <Table
+      id="staffList"
       headerText="{i18n>staffListTitle}"
       class="sapUiResponsiveMargin"
       width="auto"
       items="{staff>/Staff}" >
+      <headerToolbar>
+         <Toolbar>
+            <Title text="{i18n>staffListTitle}"/>
+            <ToolbarSpacer/>
+            <MultiComboBox
+                width="50%"
+                selectionFinish=".onSelectionFinish"
+                items="{
+				      path: 'staff>/Filter'
+			      }">
+			      <core:Item key="{staff>key}" text="{staff>value}"/>
+            </MultiComboBox>
+         </Toolbar>
+      </headerToolbar>
+      <columns>
+         <Column>
+            <Text text="{i18n>columnLastName}"/>
+         </Column>
+         <Column>
+            <Text text="{i18n>columnFirstName}"/>
+         </Column>
+         <Column>
+            <Text text="{i18n>columnMiddleName}"/>
+         </Column>
+         <Column
+            hAlign="End">
+            <Text text="{i18n>columnStatus}"/>
+         </Column>
+		</columns>
       <items>
-         <ObjectListItem
-            title="{staff>LastName} {staff>FirstName} {staff>MiddleName}"
-            number="{
-			    parts: [{path: 'staff>Vacation'}],
-			    type: 'sap.ui.model.type.String'
-		    }"/>
+         <ColumnListItem type="Navigation" press=".onPress">
+             <cells>
+                 <ObjectNumber number="{staff>LastName}"/>
+                 <ObjectNumber number="{staff>FirstName}" emphasized="false"/>
+                 <ObjectNumber number="{staff>MiddleName}" emphasized="false"/>
+                 <ObjectNumber 
+                     number="{
+			                parts: [{path: 'staff>Vacation'}],
+			                type: 'sap.ui.model.type.String'
+		                }"
+                      unit=" до {staff>VacationEndDate}"
+                      state="{= ${staff>Vacation} === 'Работает' ? 'Success' : 'Error' }"/>
+             </cells>
+         </ColumnListItem>
       </items>
-   </List>
+   </Table>
 </mvc:View>

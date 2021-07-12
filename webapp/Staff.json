@@ -80,6 +80,10 @@
         "Vacation": "Работает",
         "VacationEndDate": "-"
       }
+    ],
+    "Filter":[
+      {"key": "Vacation", "value": "Работает"},
+      {"key": "Vacation", "value": "В отпуске"}
     ]
   }
   
